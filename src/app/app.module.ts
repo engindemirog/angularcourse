@@ -10,13 +10,15 @@ import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ProductService } from './services/product.service';
 import { AdminModule } from './modules/admin/admin.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     CategoryComponent,
-    NaviComponent
+    NaviComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

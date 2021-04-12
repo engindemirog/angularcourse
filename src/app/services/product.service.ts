@@ -15,5 +15,9 @@ export class ProductService {
   getProducts():Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.apiUrl);
   }
+
+  getProductsByCategory(categoryId:number):Observable<Product[]>{
+    return this.httpClient.get<Product[]>(this.apiUrl+"?categoryId="+categoryId);
+  }
   
 }

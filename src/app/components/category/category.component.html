@@ -1,3 +1,6 @@
 <ul class="list-group">
-    <li *ngFor="let category of categories" class="list-group-item">{{category.name}}</li>
+    <li [routerLink]="['/products/category',category.id]" 
+    routerLinkActive ="active"
+    *ngFor="let category of categories" class="list-group-item">
+        {{category.name}}</li>
 </ul>
