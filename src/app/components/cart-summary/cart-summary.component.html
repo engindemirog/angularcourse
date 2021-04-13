@@ -1,0 +1,16 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Sepetiniz
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li *ngFor="let item of cartItems"><a class="dropdown-item">{{item.product.name}} 
+            <span class="badge bg-primary">{{item.quantity}}</span>
+            <span (click)="removeFromCart(item.product)" class="badge bg-danger">Sil</span>
+        </a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+</li>

@@ -13,6 +13,7 @@ import { ProductService } from './services/product.service';
 import { AdminModule } from './modules/admin/admin.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     ProductComponent,
     CategoryComponent,
     NaviComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,
