@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'E-Ticaret';
+  currentCategory:string;
+
+  getChildData(data:string){
+    this.currentCategory = data;
+  }
 }

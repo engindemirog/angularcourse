@@ -1,5 +1,6 @@
+<h3>{{title}}</h3>
 <ul class="list-group">
-    <li [routerLink]="['/products/category',category.id]" 
+    <li (click)="setCurrentCategory(category.name)" [routerLink]="['/products/category',category.id]" 
     routerLinkActive ="active"
     *ngFor="let category of categories" class="list-group-item">
         {{category.name}}</li>
