@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms"
+import { ToastrService } from 'ngx-toastr';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-add',
@@ -10,7 +12,9 @@ export class ProductAddComponent implements OnInit {
 
   productAddForm:FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, 
+    private productService:ProductService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createProductAddForm();
@@ -26,7 +30,10 @@ export class ProductAddComponent implements OnInit {
   }
 
   add(){
-    
+   this.productService.add(this.productAddForm.value).subscribe(response=>{
+    this.toastrService.success("Ürün eklendi",this.productAddForm.value["name"]);
+   });
+   
   }
 
 }

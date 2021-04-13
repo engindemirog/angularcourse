@@ -19,5 +19,9 @@ export class ProductService {
   getProductsByCategory(categoryId:number):Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.apiUrl+"?categoryId="+categoryId);
   }
+
+  add(product:Product):Observable<any>{
+    return this.httpClient.post(this.apiUrl,product)
+  }
   
 }

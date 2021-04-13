@@ -944,6 +944,20 @@
       "unitPrice": 9,
       "unitsInStock": 3,
       "id": 79
+    },
+    {
+      "name": "Portakal",
+      "categoryId": 2,
+      "unitPrice": "2",
+      "unitsInStock": "3",
+      "id": 80
+    },
+    {
+      "name": "Karpuz",
+      "categoryId": 7,
+      "unitPrice": "7",
+      "unitsInStock": "7",
+      "id": 81
     }
   ],
   "categories": [
