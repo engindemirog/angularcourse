@@ -3,6 +3,11 @@
   <span class="visually-hidden"></span>
 </div>
 
+<div class="mb-3">
+  <label for="filterText" class="form-label">Ürün ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+</div>
+
 <table class="table">
     <thead>
       <tr>
@@ -10,16 +15,18 @@
         <th scope="col">Kategori</th>
         <th scope="col">Ürün Adı</th>
         <th scope="col">Fiyatı</th>
+        <th scope="col">KDV'li Fiyatı</th>
         <th scope="col">Stok Adedi</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of products | filter:filterText">
         <th scope="row">{{product.id}}</th>
         <td>{{product.categoryId}}</td>
-        <td>{{product.name}}</td>
-        <td>{{product.unitPrice}}</td>
+        <td>{{product.name | uppercase}}</td>
+        <td>{{product.unitPrice | currency:"EUR"}}</td>
+        <td>{{product.unitPrice | vatAdded:10 | currency:"EUR"}}</td>
         <td>{{product.unitsInStock}}</td>
         <td><button (click)="addToCart(product)" class="btn btn-success">Sepete ekle</button></td>
       </tr>

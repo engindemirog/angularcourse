@@ -25,7 +25,11 @@ export class CartService {
   removeFromCart(product:Product){
     let item = CartItems.find(c=>c.product.id === product.id)
     if(item){
-      CartItems.splice(CartItems.indexOf(item),1)
+      if(item.quantity>1){
+        item.quantity--;
+      }else{
+        CartItems.splice(CartItems.indexOf(item),1)
+      } 
     }
   }
 

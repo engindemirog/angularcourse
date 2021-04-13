@@ -14,6 +14,8 @@ import { AdminModule } from './modules/admin/admin.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CategoryComponent,
     NaviComponent,
     NotFoundComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    VatAddedPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
