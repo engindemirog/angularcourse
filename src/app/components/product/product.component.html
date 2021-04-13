@@ -11,6 +11,7 @@
         <th scope="col">Ürün Adı</th>
         <th scope="col">Fiyatı</th>
         <th scope="col">Stok Adedi</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
         <td>{{product.name}}</td>
         <td>{{product.unitPrice}}</td>
         <td>{{product.unitsInStock}}</td>
+        <td><button (click)="addToCart(product)" class="btn btn-success">Sepete ekle</button></td>
       </tr>
     </tbody>
   </table>
