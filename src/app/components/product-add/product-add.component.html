@@ -7,17 +7,23 @@
                     <label>Ürün adı</label>
                     <input type="text" placeholder="Ürün adı" formControlName="name" class="form-control"/>
                 </div>
+                <small *ngIf="productAddForm.get('name')?.hasError('required') && productAddForm.get('name')?.touched" class="form-text text-muted">
+                    Ürün adı zounludur
+                </small>
+                <small *ngIf="productAddForm.get('name')?.hasError('minlength') && productAddForm.get('name')?.dirty"  class="form-text text-muted">
+                    Ürün adı en az iki karakter olmalıdır
+                </small>
                 <div class="mb-3">
                     <label>Kategori</label>
                     <input type="number" placeholder="Kategori" formControlName="categoryId" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label>Fiyat</label>
-                    <input type="text" placeholder="Fiyat" formControlName="unitPrice" class="form-control"/>
+                    <input type="number" placeholder="Fiyat" formControlName="unitPrice" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label>Stok Adedi</label>
-                    <input type="text" placeholder="stok adedi" formControlName="unitsInStock" class="form-control"/>
+                    <input type="number" placeholder="stok adedi" formControlName="unitsInStock" class="form-control"/>
                 </div>
             </form>
         </div>
